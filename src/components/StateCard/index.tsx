@@ -16,12 +16,12 @@ function StateCard({ state }: stateCardProps): JSX.Element {
     <section className="h-full grid grid-cols-1 md:grid-cols-2 items-center px-4 md:pr-4">
       <div className="navigation__wrapper relative h-full">
         <ul className="flex flex-col justify-center pl-20 h-full text-start">
-          <li className="text-7xl font-extrabold tracking-wider">
-            <span className="bg-clip-text  text-gray-100 capitalize font_ animate__animated animate__fadeIn">
+          <li className="text-7xl font-extrabold tracking-wider pt-8">
+            <span className="bg-clip-text   text-gray-100 capitalize font_ animate__animated animate__fadeIn">
               {state.name}
             </span>
             <p className="text-xl text-gray-200/[0.8]">{state.capital}</p>
-            <p className="text-xs text-gray-200 w-96 font-medium mt-7 capitalize bg-slate-50/[0.3] p-4 ">
+            <p className="text-xs text-gray-200 w-96 font-black mt-7 capitalize bg-slate-50/[0.2] p-4 ">
               {state.description}
             </p>
           </li>

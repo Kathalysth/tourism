@@ -21,7 +21,7 @@ function LandMark({
           style={{
             backgroundImage: `url('/${landMark.url}.jpg')`,
           }}
-          className="background_landmark w-full h-full  rounded-xl"
+          className="background_landmark w-full h-full  rounded-xl shadow-lg"
         />
       </div>
     </li>
