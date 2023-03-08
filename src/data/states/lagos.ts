@@ -1,6 +1,7 @@
 export const lagos = {
   name: "Lagos",
   alias: "FCT",
+  capital: "Ikeja",
   url: "lagos",
   description: `Lagos is the largest city in Nigeria and one of the fastest-growing cities in the world. It is famous for many things, including:
     NightLife,
@@ -13,9 +14,9 @@ export const lagos = {
       url: "lagos/bar_beach",
     },
     {
-      name: "Lekki Mall",
+      name: "Eko Atlantic",
       location: "Lagos",
-      url: "lagos/bar_beach",
+      url: "lagos/eko_atlantic",
     },
   ],
 };

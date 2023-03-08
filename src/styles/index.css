@@ -28,24 +28,11 @@ body {
 .font_ {
   font-family: "lato", sans-serif;
 }
-h4,
-p {
-  font-family: "Inter", sans-serif;
-}
 
-.bg_common {
-  height: 15rem;
-  width: 15rem;
-  border-radius: 10px;
-}
 .card {
   /* transition: transform 0.6s; */
   /* transform-style: preserve-3d; */
   cursor: pointer;
-}
-.card:hover {
-  /* transition: 0.9s; */
-  /* transform: rotateY(360deg); */
 }
 
 .background_landmark {

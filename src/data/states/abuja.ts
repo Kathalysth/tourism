@@ -1,6 +1,7 @@
 export const abuja = {
   name: "Abuja",
   alias: "FCT",
+  capital: "FCT",
   url: "abuja",
   description: `Abuja is the capital city of Nigeria and is known for
     several things, including: Aso Rock (Presidential Villa),

@@ -17,9 +17,10 @@ function StateCard({ state }: stateCardProps): JSX.Element {
       <div className="navigation__wrapper relative h-full">
         <ul className="flex flex-col justify-center pl-20 h-full text-start">
           <li className="text-7xl font-extrabold tracking-wider">
-            <span className="bg-clip-text  text-gray-100 capitalize font_">
+            <span className="bg-clip-text  text-gray-100 capitalize font_ animate__animated animate__fadeIn">
               {state.name}
             </span>
+            <p className="text-xl text-gray-200/[0.8]">{state.capital}</p>
             <p className="text-xs text-gray-200 w-96 font-medium mt-7 capitalize">
               {state.description}
             </p>
@@ -27,8 +28,28 @@ function StateCard({ state }: stateCardProps): JSX.Element {
         </ul>
       </div>
       <div>
-        <div>
-          <h2 className="font-extrabold mb-4 text-lg bg-clip-text text-slate-100 bg-gradient-to-b from-gray-100">
+        <div className="flex gap-4 items-center  mb-4">
+          <svg
+            className="w-5 h-5 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            ></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            ></path>
+          </svg>
+          <h2 className="font-extrabold  text-lg bg-clip-text text-slate-100 bg-gradient-to-b from-gray-100">
             Places you could check out
           </h2>
         </div>

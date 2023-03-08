@@ -70,7 +70,7 @@ function App() {
               ref={prevRef}
               className="text-xl md:text-5xl font-extrabold select-none"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_ animate__animated animate__fadeIn">
                 {previousState}
               </span>
             </li>
@@ -78,7 +78,7 @@ function App() {
               ref={nextRef}
               className="text-xl md:text-5xl font-extrabold select-none"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_ animate__animated animate__fadeIn">
                 {nextState}
               </span>
             </li>

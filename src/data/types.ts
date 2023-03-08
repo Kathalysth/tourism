@@ -1,6 +1,7 @@
 export type stateType = {
   name: string;
   alias: string;
+  capital: string;
   url: string;
   landMarks: Array<landMarkType>;
   description: string;
