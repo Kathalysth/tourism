@@ -11,4 +11,5 @@ export type landMarkType = {
   name: string;
   location: string;
   url: string;
+  rating: number;
 };

@@ -10,11 +10,13 @@ export const crossRiver = {
       name: "Obudu Castle Ranch",
       location: "Calabar",
       url: "cross_river/obudu",
+      rating: 4,
     },
     {
       name: "Tinapa Resorts",
       location: "Calabar",
       url: "cross_river/tinapa_resort",
+      rating: 3,
     },
   ],
 };

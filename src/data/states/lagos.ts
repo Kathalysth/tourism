@@ -12,11 +12,13 @@ export const lagos = {
       name: "Bar Beach",
       location: "Lagos",
       url: "lagos/bar_beach",
+      rating: 3,
     },
     {
       name: "Eko Atlantic",
       location: "Lagos",
       url: "lagos/eko_atlantic",
+      rating: 5,
     },
   ],
 };

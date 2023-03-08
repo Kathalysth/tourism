@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Navigation, A11y } from "swiper";
+import { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { landMarkType, stateType } from "../../data/types";
 import "swiper/swiper-bundle.css";
@@ -21,7 +21,7 @@ function StateCard({ state }: stateCardProps): JSX.Element {
               {state.name}
             </span>
             <p className="text-xl text-gray-200/[0.8]">{state.capital}</p>
-            <p className="text-xs text-gray-200 w-96 font-medium mt-7 capitalize">
+            <p className="text-xs text-gray-200 w-96 font-medium mt-7 capitalize bg-slate-50/[0.3] p-4 ">
               {state.description}
             </p>
           </li>
@@ -55,7 +55,7 @@ function StateCard({ state }: stateCardProps): JSX.Element {
         </div>
         <Swiper
           className="h-96 w-full"
-          modules={[Navigation, A11y]}
+          modules={[Navigation, A11y, Autoplay]}
           spaceBetween={5}
           slidesPerView={2}
           onInit={(swiper) => {
@@ -65,6 +65,9 @@ function StateCard({ state }: stateCardProps): JSX.Element {
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
             swiper.navigation.update();
+          }}
+          autoplay={{
+            delay: 5000,
           }}
           breakpoints={{
             1600: {

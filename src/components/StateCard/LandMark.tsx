@@ -1,5 +1,5 @@
 import { landMarkType } from "../../data/types";
-import RenderCirles from "../RenderCirles";
+import RenderRatings from "../RenderRatings";
 
 function LandMark({
   landMark,
@@ -14,7 +14,7 @@ function LandMark({
         <h4 className="text-sm  bg-transparent capitalize text-gray-100 w-full">
           {landMark.name}, {landMark.location}
         </h4>
-        <RenderCirles />
+        <RenderRatings rating={landMark.rating} />
       </div>
       <div className="card w-full h-full  rounded-xl">
         <div
