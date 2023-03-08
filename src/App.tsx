@@ -58,20 +58,26 @@ function App() {
                   backgroundImage: `url('/${state.url}.jpg')`,
                 }}
                 className="bg-gradient-to-r to-slate-50 from-indigo-300 background_state absolute top-0 left-0 right-0 bottom-0 -z-[1]"
-              ></div>
+              />
               <StateCard state={state} />
             </SwiperSlide>
           );
         })}
 
-        <div className="absolute h-full left-0 top-0 z-[40]">
-          <ul className="flex flex-col h-full justify-between py-16 pl-20">
-            <li ref={prevRef} className="text-5xl font-extrabold select-none">
+        <div className="absolute md:h-full w-full md:w-fit left-0 top-0 z-[40]">
+          <ul className="flex md:flex-col w-full md:h-full items-center md:items-start justify-between px-4 py-16 md:pl-20">
+            <li
+              ref={prevRef}
+              className="text-xl md:text-5xl font-extrabold select-none"
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_">
                 {previousState}
               </span>
             </li>
-            <li ref={nextRef} className="text-5xl font-extrabold select-none">
+            <li
+              ref={nextRef}
+              className="text-xl md:text-5xl font-extrabold select-none"
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-100  capitalize tracking-wider font_">
                 {nextState}
               </span>

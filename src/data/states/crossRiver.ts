@@ -2,18 +2,18 @@ export const crossRiver = {
   name: "Cross River",
   alias: "FCT",
   url: "cross_river",
-  description: `Lagos is the largest city in Nigeria and one of the fastest-growing cities in the world. It is famous for many things, including:
-    NightLife,
-    Beaches, Cultural Diversities, Food, and
-    multi-national businesses.`,
+  description: `Cross River is a state in southeastern Nigeria known for its rich cultural heritage and natural beauty. Some famous locations include: Obudu Mountain resort,
+  Tinapa Business and Leisure Resort,Calabar Museum`,
   landMarks: [
     {
       name: "Obudu Castle Ranch",
-      location: "Abuja",
+      location: "Calabar",
+      url: "cross_river/obudu",
     },
     {
-      name: "Nigerian National Stadium",
-      location: "Abuja",
+      name: "Tinapa Resorts",
+      location: "Calabar",
+      url: "cross_river/tinapa_resort",
     },
   ],
 };

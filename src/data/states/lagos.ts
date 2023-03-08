@@ -10,10 +10,12 @@ export const lagos = {
     {
       name: "Bar Beach",
       location: "Lagos",
+      url: "lagos/bar_beach",
     },
     {
       name: "Lekki Mall",
       location: "Lagos",
+      url: "lagos/bar_beach",
     },
   ],
 };

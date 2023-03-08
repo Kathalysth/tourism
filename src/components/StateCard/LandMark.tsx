@@ -9,14 +9,21 @@ function LandMark({
   delay: number;
 }): JSX.Element {
   return (
-    <li className="card w-full h-full">
-      <div className="space-y-2 absolute bottom-0 left-2 p-4">
-        <h4 className="text-sm capitalize text-gray-100 w-full">
+    <li className="h-full bg-transparent rounded-xl">
+      <div className="p-2">
+        <h4 className="text-sm  bg-transparent capitalize text-gray-100 w-full">
           {landMark.name}, {landMark.location}
         </h4>
         <RenderCirles />
       </div>
-      <div className="background_landmark w-full h-full" />
+      <div className="card w-full h-full  rounded-xl">
+        <div
+          style={{
+            backgroundImage: `url('/${landMark.url}.jpg')`,
+          }}
+          className="background_landmark w-full h-full  rounded-xl"
+        />
+      </div>
     </li>
   );
 }

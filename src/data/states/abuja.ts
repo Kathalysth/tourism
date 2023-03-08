@@ -10,10 +10,12 @@ export const abuja = {
     {
       name: "Aso Rock",
       location: "Abuja",
+      url: "abuja/aso_rock",
     },
     {
       name: "Nigerian National Stadium",
       location: "Abuja",
+      url: "abuja/national_stadium",
     },
   ],
 };

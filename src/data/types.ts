@@ -9,4 +9,5 @@ export type stateType = {
 export type landMarkType = {
   name: string;
   location: string;
+  url: string;
 };

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { landMarkType, stateType } from "../../data/types";
@@ -13,7 +13,7 @@ function StateCard({ state }: stateCardProps): JSX.Element {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <section className="h-full grid grid-cols-2 items-center pr-4">
+    <section className="h-full grid grid-cols-1 md:grid-cols-2 items-center px-4 md:pr-4">
       <div className="navigation__wrapper relative h-full">
         <ul className="flex flex-col justify-center pl-20 h-full text-start">
           <li className="text-7xl font-extrabold tracking-wider">
@@ -45,14 +45,36 @@ function StateCard({ state }: stateCardProps): JSX.Element {
             swiper.navigation.init();
             swiper.navigation.update();
           }}
+          breakpoints={{
+            1600: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            1300: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            900: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1,
+            },
+            320: {
+              slidesPerView: 1,
+            },
+          }}
         >
           {state.landMarks.map((landMark: landMarkType, index: number) => (
-            <SwiperSlide className="bg-slate-100 rounded-xl relative">
-              <LandMark
-                landMark={landMark}
-                key={landMark.name}
-                delay={index + 1}
-              />
+            <SwiperSlide
+              className="bg-transparent rounded-xl relative"
+              key={landMark.name}
+            >
+              <LandMark landMark={landMark} delay={index + 1} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -60,7 +82,7 @@ function StateCard({ state }: stateCardProps): JSX.Element {
         <div className="flex items-center pl-2 mt-8 gap-8">
           <button
             ref={prevRef}
-            className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
+            className="focus:outline-none w-9 h-9 p-2 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
           >
             <svg
               className="w-6 h-6 text-gray-300"
@@ -78,7 +100,7 @@ function StateCard({ state }: stateCardProps): JSX.Element {
 
           <button
             ref={nextRef}
-            className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
+            className="focus:outline-none w-9 h-9 p-2 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
           >
             <svg
               className="w-6 h-6 text-gray-300"
