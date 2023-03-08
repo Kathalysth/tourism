@@ -8,12 +8,12 @@ export const lagos = {
     multi-national businesses.`,
   landMarks: [
     {
-      name: "Aso Rock",
-      location: "Abuja",
+      name: "Bar Beach",
+      location: "Lagos",
     },
     {
-      name: "Nigerian National Stadium",
-      location: "Abuja",
+      name: "Lekki Mall",
+      location: "Lagos",
     },
   ],
 };

@@ -2,11 +2,11 @@ export type stateType = {
   name: string;
   alias: string;
   url: string;
-  landMarks: Array<landMark>;
+  landMarks: Array<landMarkType>;
   description: string;
 };
 
-export type landMark = {
+export type landMarkType = {
   name: string;
   location: string;
 };

@@ -8,7 +8,7 @@ export const crossRiver = {
     multi-national businesses.`,
   landMarks: [
     {
-      name: "Aso Rock",
+      name: "Obudu Castle Ranch",
       location: "Abuja",
     },
     {

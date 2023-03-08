@@ -1,12 +1,19 @@
-import { stateType } from "../../data/types";
+import { useRef, useState } from "react";
+import { Navigation, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { landMarkType, stateType } from "../../data/types";
+import "swiper/swiper-bundle.css";
+import LandMark from "./LandMark";
 
 type stateCardProps = {
   state: stateType;
 };
 
 function StateCard({ state }: stateCardProps): JSX.Element {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   return (
-    <section className="grid grid-cols-2">
+    <section className="h-full grid grid-cols-2 items-center pr-4">
       <div className="navigation__wrapper relative h-full">
         <ul className="flex flex-col justify-center pl-20 h-full text-start">
           <li className="text-7xl font-extrabold tracking-wider">
@@ -19,98 +26,42 @@ function StateCard({ state }: stateCardProps): JSX.Element {
           </li>
         </ul>
       </div>
+      <div>
+        <div>
+          <h2 className="font-extrabold mb-4 text-lg bg-clip-text text-slate-100 bg-gradient-to-b from-gray-100">
+            Places you could check out
+          </h2>
+        </div>
+        <Swiper
+          className="h-96 w-full"
+          modules={[Navigation, A11y]}
+          spaceBetween={5}
+          slidesPerView={2}
+          onInit={(swiper) => {
+            // @ts-ignore
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-ignore
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
+        >
+          {state.landMarks.map((landMark: landMarkType, index: number) => (
+            <SwiperSlide className="bg-slate-100 rounded-xl relative">
+              <LandMark
+                landMark={landMark}
+                key={landMark.name}
+                delay={index + 1}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <main className="pr-5">
-        <section className="py-10 mt-10">
-          <ul className="flex items-center space-x-4">
-            <li className="card">
-              <main className="space-y-3">
-                <div className="space-y-2">
-                  <h4 className="text-sm capitalize text-gray-100 w-full">
-                    Great Barrier Reif, australia
-                  </h4>
-                  <div>
-                    <ul className="flex items-center space-x-1">
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="bg_barrier_reif">
-                  <div className="m-3 float-right bg-gray-100 w-7 h-7 rounded-full flex items-center justify-center">
-                    <button className="focus:outline-none text-gray-400 hover:text-gray-500">
-                      <svg
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </main>
-            </li>
-
-            <li className="mt-10 card">
-              <main className="space-y-3">
-                <div className="space-y-2">
-                  <h4 className="text-sm capitalize text-gray-900 w-full">
-                    opera house, australia
-                  </h4>
-                  <div>
-                    <ul className="flex items-center space-x-1">
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src="/aus/opera.jpg"
-                    alt="opera house"
-                    className="bg_common"
-                  />
-                </div>
-              </main>
-            </li>
-
-            <li className="mt-10 card">
-              <main className="space-y-3">
-                <div className="space-y-2">
-                  <h4 className="text-sm capitalize text-gray-900 w-full">
-                    gold cost, australia
-                  </h4>
-                  <div>
-                    <ul className="flex items-center space-x-1">
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-50"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                      <li className="w-2 h-2 rounded-full bg-gray-600"></li>
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src="/aus/gold-cost.jpg"
-                    alt="gold cost"
-                    className="bg_common"
-                  />
-                </div>
-              </main>
-            </li>
-          </ul>
-        </section>
-        <div className="flex items-center space-x-3">
-          <button className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center">
+        <div className="flex items-center pl-2 mt-8 gap-8">
+          <button
+            ref={prevRef}
+            className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
+          >
             <svg
               className="w-6 h-6 text-gray-300"
               fill="currentColor"
@@ -118,14 +69,17 @@ function StateCard({ state }: stateCardProps): JSX.Element {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
 
-          <button className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center">
+          <button
+            ref={nextRef}
+            className="focus:outline-none w-9 h-9 bg-transparent rounded-full border border-gray-200 flex items-center justify-center"
+          >
             <svg
               className="w-6 h-6 text-gray-300"
               fill="currentColor"
@@ -133,14 +87,14 @@ function StateCard({ state }: stateCardProps): JSX.Element {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
         </div>
-      </main>
+      </div>
     </section>
   );
 }
