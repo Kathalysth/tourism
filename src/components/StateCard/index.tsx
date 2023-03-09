@@ -19,8 +19,6 @@ function StateCard({ state }: stateCardProps): JSX.Element {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  console.log(`${inView}-${state.name}`);
-
   return (
     <div ref={ref} className="relative h-full">
       {inView ? (
