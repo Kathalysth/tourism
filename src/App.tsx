@@ -29,6 +29,7 @@ function App() {
     <main className="max-h-screen">
       <Navbar />
       <Swiper
+        tag="ul"
         className="max-h-screen relative"
         modules={[Navigation, A11y, EffectFade]}
         spaceBetween={0}
@@ -51,6 +52,7 @@ function App() {
         {data.map((state: stateType) => {
           return (
             <SwiperSlide
+              tag="li"
               className="relative bg-gradient-to-r to-slate-50 from-indigo-300"
               key={state.name.toLowerCase()}
             >
