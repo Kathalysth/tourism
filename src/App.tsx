@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Navigation, A11y } from "swiper";
+import { Navigation, A11y, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import data from "./data";
 import { stateType } from "./data/types";
@@ -30,9 +30,10 @@ function App() {
       <Navbar />
       <Swiper
         className="max-h-screen relative"
-        modules={[Navigation, A11y]}
+        modules={[Navigation, A11y, EffectFade]}
         spaceBetween={0}
         slidesPerView={1}
+        effect="fade"
         direction="vertical"
         onSlideChange={(swiper) => {
           handleChangeStateName(data, swiper.activeIndex ?? 0);
@@ -55,7 +56,7 @@ function App() {
             >
               <div
                 style={{
-                  backgroundImage: `url('/${state.url}.jpg')`,
+                  backgroundImage: `url('/${state.url}/${state.url}.webp')`,
                 }}
                 className="bg-gradient-to-r to-slate-50 from-indigo-300 background_state absolute top-0 left-0 right-0 bottom-0 -z-[1]"
               />

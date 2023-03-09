@@ -19,9 +19,9 @@ function LandMark({
       <div className="card w-full h-full  rounded-xl">
         <div
           style={{
-            backgroundImage: `url('/${landMark.url}.jpg')`,
+            backgroundImage: `url('/${landMark.url}.webp')`,
           }}
-          className="background_landmark w-full h-full  rounded-xl shadow-lg"
+          className="background_landmark w-full h-full  rounded-xl"
         />
       </div>
     </li>

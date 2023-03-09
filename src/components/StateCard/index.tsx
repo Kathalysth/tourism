@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Navigation, A11y, Autoplay } from "swiper";
+import { Navigation, A11y, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { landMarkType, stateType } from "../../data/types";
 import "swiper/swiper-bundle.css";
@@ -55,9 +55,11 @@ function StateCard({ state }: stateCardProps): JSX.Element {
         </div>
         <Swiper
           className="h-96 w-full"
-          modules={[Navigation, A11y, Autoplay]}
+          modules={[Navigation, A11y, Autoplay, EffectCoverflow]}
           spaceBetween={5}
           slidesPerView={2}
+          effect="coverflow"
+          lazyPreloaderClass="swiper-lazy-preloade"
           onInit={(swiper) => {
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;
