@@ -16,7 +16,11 @@ function Navbar(): JSX.Element {
           </div>
 
           <div className="flex items-center space-x-5">
-            <button className="focus:outline-none bg-transparent text-gra hover:text-gray-800 w-7 h-7 rounded-full flex items-center justify-center">
+            <button
+              role="button"
+              aria-label="search website"
+              className="focus:outline-none bg-transparent text-gra hover:text-gray-800 w-7 h-7 rounded-full flex items-center justify-center"
+            >
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"
@@ -32,7 +36,11 @@ function Navbar(): JSX.Element {
                 ></path>
               </svg>
             </button>
-            <button className="focus:outline-none bg-transparent text-gray-400 hover:text-gray-800 w-7 h-7 rounded-full flex items-center justify-center">
+            <button
+              role="button"
+              aria-label="Menu"
+              className="focus:outline-none bg-transparent text-gray-400 hover:text-gray-800 w-7 h-7 rounded-full flex items-center justify-center"
+            >
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"
